@@ -1,0 +1,30 @@
+{
+  "name": "clippy",
+  "version": "1.0.0",
+  "description": "A nostalgic trip back to a better time",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "html": "cp ./src/index.html dist/index.html",
+    "dev": "npm run html && webpack-dev-server --debug"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikedevelops/clipppy.git"
+  },
+  "author": "Michael Smart",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mikedevelops/clipppy/issues"
+  },
+  "homepage": "https://github.com/mikedevelops/clipppy#readme",
+  "devDependencies": {
+    "image-size": "^0.6.1",
+    "minimist": "^1.2.0",
+    "source-map-loader": "^0.2.1",
+    "ts-loader": "^2.3.7",
+    "typescript": "^2.5.3",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.9.1"
+  }
+}
