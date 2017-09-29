@@ -5,9 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        #clippy {
+            /* background-color: red; */
+            border: 1px solid red;
+            height: 93px;
+            width: 124px;
+            position: relative;
+            overflow: hidden;
+            transform-origin: 50% 50%;
+        }
+
+        #sheet {
+            position: absolute;
+            /* display: none; */
+        }
+
+        #controls {
+            text-align: center;
+            margin: 0.5rem;
+            position: relative;
+        }
+
+        button {
+            margin: 1rem 0;
+            padding: 0.25rem;
+        }
+    </style>
 </head>
 <body>
-    <pre>Hello, world</pre>
-    <script src="clippy.bundle.js"></script>
+    <div draggable="true" id="clippy"><img id="sheet"></div>
+    <div id="controls">
+        <button id="play">Play</button>
+        <button id="reset">Reset</button>
+    </div>
 </body>
 </html>

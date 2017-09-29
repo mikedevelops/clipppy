@@ -4,9 +4,10 @@
   "description": "A nostalgic trip back to a better time",
   "main": "index.js",
   "scripts": {
+    "dev": "webpack-dev-server --debug",
+    "flow": "flow",
     "test": "jest",
-    "html": "cp ./src/index.html dist/index.html",
-    "dev": "npm run html && webpack-dev-server --debug"
+    "test:watch": "jest --watch"
   },
   "repository": {
     "type": "git",
@@ -19,12 +20,20 @@
   },
   "homepage": "https://github.com/mikedevelops/clipppy#readme",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-flow": "^6.23.0",
+    "file-loader": "^0.11.2",
+    "flow-bin": "^0.55.0",
+    "flow-typed": "^2.1.5",
     "image-size": "^0.6.1",
+    "jest": "^21.2.1",
     "minimist": "^1.2.0",
     "source-map-loader": "^0.2.1",
-    "ts-loader": "^2.3.7",
-    "typescript": "^2.5.3",
     "webpack": "^3.6.0",
-    "webpack-dev-server": "^2.9.1"
+    "webpack-dev-server": "^2.9.1",
+    "webpack-html-plugin": "^0.1.1"
   }
 }

@@ -5,9 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            display: flex;
+        }
+
+        #clippy {
+            border: 1px solid red;
+            height: 200px;
+            margin: auto;
+            width: 200px;
+        }
+    </style>
 </head>
 <body>
-    <pre>Hello, world</pre>
-    <script src="clippy.bundle.js"></script>
-</body>
+    <div id="clippy"></div>
+<script src="clippy.bundle.js"></script></body>
 </html>
