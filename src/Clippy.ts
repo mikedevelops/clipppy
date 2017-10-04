@@ -7,9 +7,13 @@ export default class Clippy {
         private animationService: AnimationService,
         private renderService: RenderService,
         private vanillaDrag: VanillaDrag
-    ) {}
-
-    public init (): void {
+    ) {
         this.renderService.loadSpriteSheetIntoDom();
+    }
+
+    public start (): void {
+        this.animationService.update(() => {
+            console.log('done!');
+        });
     }
 }

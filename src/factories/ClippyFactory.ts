@@ -15,9 +15,9 @@ export default function clippy ({ window, mountingPoint, spriteSheet, spriteMatr
     const animationService = new AnimationService(renderService, window, spriteMatrix, fps);
     const drag = new VanillaDrag(window, mountingPoint);
 
-    return (new Clippy(
+    return new Clippy(
         animationService,
         renderService,
         drag
-    )).init();
+    );
 }

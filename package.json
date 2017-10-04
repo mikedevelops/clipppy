@@ -36,7 +36,7 @@
     "webpack-html-plugin": "^0.1.1"
   },
   "dependencies": {
-    "vanilla-drag": "^1.0.19"
+    "vanilla-drag": "^1.0.21"
   },
   "jest": {
     "transform": {

@@ -19,17 +19,58 @@
 
         body {
             display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
         }
 
         #clippy {
+            /* background-color: red; */
             border: 1px solid red;
-            height: 200px;
-            margin: auto;
-            width: 200px;
+            height: 93px;
+            width: 124px;
+            position: relative;
+            overflow: hidden;
+            transform-origin: 50% 50%;
+            user-select: none;
+        }
+
+        #clippy:hover {
+            cursor: move;
+            cursor: grab;
+            cursor: -moz-grab;
+            cursor: -webkit-grab;
+        }
+
+        #clippy:active {
+            cursor: grabbing;
+            cursor: -moz-grabbing;
+            cursor: -webkit-grabbing;
+        }
+
+        #sheet {
+            position: absolute;
+            pointer-events: none;
+            /* display: none; */
+        }
+
+        #controls {
+            text-align: center;
+            margin: 0.5rem;
+            position: relative;
+            display: none;
+        }
+
+        button {
+            margin: 1rem 0;
+            padding: 0.25rem;
         }
     </style>
 </head>
 <body>
     <div id="clippy"></div>
-<script src="clippy.bundle.js"></script></body>
+    <div id="controls">
+        <button id="play">Play</button>
+        <button id="reset">Reset</button>
+    </div>
+<script src="clippy.bundle.js"></script><script src="example.bundle.js"></script></body>
 </html>

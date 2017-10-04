@@ -22,8 +22,12 @@ export default class AnimationService {
     }
 
     public update (complete: () => any): void {
-        if (this.frame < this.cells) {
-            this.renderService.render(this.spriteMatrix[this.spriteMatrixIndex]);
+        if (this.spriteMatrixIndex < this.cells) {
+            if (this.frame === 0 || this.frame % (60 / this.fps) === 0) {
+                this.renderService.render(this.spriteMatrix[this.spriteMatrixIndex]);
+                this.spriteMatrixIndex++;
+            }
+
             this.frame++;
             this.window.requestAnimationFrame(this.update.bind(this, complete));
         } else {

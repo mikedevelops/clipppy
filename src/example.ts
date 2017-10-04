@@ -2,11 +2,20 @@ import clippy from './factories/ClippyFactory';
 import SpriteCoordinate from './interfaces/SpriteCoordinate';
 import spriteMatrix from '../resources/map';
 
-const spriteSheet: string = require('../resources/map.png');
+const spriteSheet = require('../resources/map.png');
 
-clippy({
+declare global {
+    interface Window { clippy: any; }
+}
+
+window.clippy = window.clippy || {};
+
+const clippyService = clippy({
     window: window,
     mountingPoint: document.getElementById('clippy'),
     spriteSheet: spriteSheet,
-    spriteMatrix: spriteMatrix
+    spriteMatrix: spriteMatrix,
+    fps: 2
 });
+
+window.clippy = clippyService;
