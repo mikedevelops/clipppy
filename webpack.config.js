@@ -2,9 +2,12 @@ const path = require('path');
 const Html = require('webpack-html-plugin');
 
 module.exports = {
-    entry: path.join(__dirname, 'src/index.js'),
+    entry: {
+        'clippy': path.join(__dirname, 'src/Clippy.ts'),
+        'example': path.join(__dirname, 'src/example.ts')
+    },
     output: {
-        filename: 'clippy.bundle.js',
+        filename: '[name].bundle.js',
         path: path.join(__dirname, 'dist')
     },
     resolve: {
@@ -18,9 +21,9 @@ module.exports = {
                 loader: 'source-map-loader',
                 enforce: 'pre'
             },
-            { 
-                test: /\.js?$/,
-                loader: 'babel-loader'
+            {
+                test: /\.ts?$/,
+                loader: 'ts-loader'
             },
             {
                 test: /\.png$/,
@@ -29,7 +32,7 @@ module.exports = {
                     loader: 'file-loader'
                   }
                 ]
-              }
+            }
         ]
     },
     plugins: [

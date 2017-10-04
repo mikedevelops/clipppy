@@ -4,9 +4,11 @@
         "sourceMap": true,
         "noImplicitAny": true,
         "module": "es2015",
+        "moduleResolution": "node",
         "target": "es2015"
     },
     "include": [
-        "./src/**/*"
+        "node_modules/vanilla-drag/index.d.ts",
+        "src/**/*"
     ]
 }

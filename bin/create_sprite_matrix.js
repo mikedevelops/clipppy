@@ -1,7 +1,7 @@
 const dimensions = require('image-size');
 const fs = require('fs');
 const path = require('path');
-const { sheet, columns, rows } = require('minimist')(process.argv.slice(2));
+const { sheet, columns, rows, typescript } = require('minimist')(process.argv.slice(2));
 
 if (!sheet) {
     console.log('Please supply the path to the sprite sheet with the "--sheet" argument');
@@ -39,14 +39,15 @@ function createSpriteMatrix (width, height, rows, columns) {
 (async function () {
     try {
         const { width, height } = await dimensions(sheet);
-        const target = path.join(process.cwd(), `resources/${path.basename(sheet, path.extname(sheet))}.json`);
+        const extension = typescript ? 'ts' : 'js';
+        const target = path.join(process.cwd(), `resources/${path.basename(sheet, path.extname(sheet))}.${extension}`);
 
         console.log('spritesheet dimensions', `${width}px x ${height}px`);
 
         fs.writeFile(
             target,
-            JSON.stringify(createSpriteMatrix(width, height, rows, columns)), 
-            'utf-8', 
+            `export default ${JSON.stringify(createSpriteMatrix(width, height, rows, columns))};`,
+            'utf-8',
         (error) => {
             if (error) {
                 console.log(error);
